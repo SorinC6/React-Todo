@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 const Todo = (props) => {
 	return <div>{props.todoItem}</div>;
