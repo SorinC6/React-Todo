@@ -2,7 +2,7 @@ import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
-const todoArray = [
+const todoData = [
 	{
 		task: 'Organize Garage',
 		id: 1528817077286,
@@ -24,18 +24,40 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			todoData: todoArray
+			todoList: todoData,
+			task: ''
 		};
 	}
+
+	handleChanges = (event) => {
+		this.setState({ [event.target.name]: event.target.value });
+	};
+
+	addNewTodo = (event) => {
+		event.preventDefault();
+		this.setState({
+			todoList: [
+				...this.state.todoList,
+				{
+					task: this.state.task,
+					id: Date.now(),
+					completed: false
+				}
+			],
+			task: ''
+		});
+
+		console.log(this.state.todoList);
+	};
 
 	render() {
 		return (
 			<div>
 				<h2>Welcome to your Todo App!</h2>
 
-				<TodoList todoData={this.state.todoData} />
+				<TodoList todoData={this.state.todoList} />
 
-            <TodoForm/>
+				<TodoForm addNewTodo={this.addNewTodo} handleChanges={this.handleChanges} task={this.state.task} />
 			</div>
 		);
 	}
