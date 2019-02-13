@@ -30,7 +30,19 @@ class App extends React.Component {
 	}
 
 	handleChanges = (event) => {
-		this.setState({ [event.target.name]: event.target.value });
+
+      this.setState({ [event.target.name]: event.target.value });
+      
+      // this.setState({
+		// 	todoList: [
+		// 		...this.state.todoList,
+		// 		{
+		// 			task: event.target.value,
+		// 			id: Date.now(),
+		// 			completed: false
+		// 		}
+		// 	],
+		// });
 	};
 
 	addNewTodo = (event) => {
@@ -48,16 +60,27 @@ class App extends React.Component {
 		});
 
 		console.log(this.state.todoList);
-	};
+   };
+   
+   onToggle = (id) => {
+      console.log(id,' idddd');
+   }
 
 	render() {
 		return (
 			<div>
 				<h2>Welcome to your Todo App!</h2>
 
-				<TodoList todoData={this.state.todoList} />
+            <TodoList 
+               todoData={this.state.todoList} 
+               onToggle={this.onToggle}
+            />
 
-				<TodoForm addNewTodo={this.addNewTodo} handleChanges={this.handleChanges} task={this.state.task} />
+            <TodoForm 
+               addNewTodo={this.addNewTodo} 
+               handleChanges={this.handleChanges} 
+               task={this.state.task} 
+            />
 			</div>
 		);
 	}

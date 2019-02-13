@@ -6,6 +6,7 @@ function TodoForm(props) {
 		<form onSubmit={props.addNewTodo}>
 			<input value={props.task} type="text" name="task" placeholder="...todo" onChange={props.handleChanges} />
 			<button type="submit">Add Todo</button>
+         <button onClick={props.clearCompleted}>Clear Todos</button>
 		</form>
 	);
 }
