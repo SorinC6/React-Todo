@@ -13,7 +13,7 @@ const TodoList = (props) => {
                   key={todo.id}
                   todoItem={todo.task}
                   onToggle={() => props.onToggle(todo.id)}
-                  buttonStyle={todo.completed ? 'completed' : null}
+                  buttonStyle={ todo.completed ? 'completed' : null}
                />
             );
          })}

@@ -30,22 +30,26 @@ class App extends React.Component {
 	}
 
 	handleChanges = (event) => {
-		this.setState({ [event.target.name]: event.target.value });
+      //this.setState({ [event.target.name]: event.target.value });
+      this.setState({
+         task: event.target.value
+      })
 
-   //    this.setState({
-   //       todoList: this.state.todoList.task=event.target.value
-	// 	// this.setState({
-	// 	// 	todoList: [
-	// 	// 		...this.state.todoList,
-	// 	// 		{
-	// 	// 			task: event.target.value,
-	// 	// 			id: Date.now(),
-	// 	// 			completed: false
-	// 	// 		}
-	// 	// 	],
-	// 	// });
-   // });
-}
+
+		//    this.setState({
+		//       todoList: this.state.todoList.task=event.target.value
+		// 	// this.setState({
+		// 	// 	todoList: [
+		// 	// 		...this.state.todoList,
+		// 	// 		{
+		// 	// 			task: event.target.value,
+		// 	// 			id: Date.now(),
+		// 	// 			completed: false
+		// 	// 		}
+		// 	// 	],
+		// 	// });
+		// });
+	};
 
 	addNewTodo = (event) => {
 		event.preventDefault();
@@ -60,6 +64,21 @@ class App extends React.Component {
 			],
 			task: ''
 		});
+
+	
+      // this.setState((st) =>({
+      //    todoList: st.todoList.concat({
+      //       task: this.state.task,
+		// 	 	id: Date.now(),
+		// 		completed: false
+      //    }),
+      // })
+      // );
+
+      // this.setState(st=>({
+      //    todoList:st.todoList.task=''
+      // }))
+      
 		// console.log(this.state.todoList);
 	};
 
@@ -102,6 +121,8 @@ class App extends React.Component {
 					task={this.state.task}
 					clearCompleted={this.clearCompleted}
 				/>
+
+            
 			</div>
 		);
 	}
