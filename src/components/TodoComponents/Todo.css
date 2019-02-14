@@ -30,8 +30,9 @@
 
 .form-style{
    border-style: double;
-   width:30%;
+   width:40%;
    margin:20px auto;
+   text-align: center;
 }
 
 .input-style{
@@ -41,4 +42,17 @@
 
 button{
    color:purple;
+   padding:15px;
+   margin:7px;
+   border-radius: 10px;
+   font-size: 15px;
+}
+
+.app-title{
+   margin:0 auto;
+   max-width:41%;
+   margin-top:5%;
+   margin-bottom: 5%;
+   color:purple;
+   font-size: 40px;
 }
