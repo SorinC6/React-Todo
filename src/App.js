@@ -30,11 +30,10 @@ class App extends React.Component {
 	}
 
 	handleChanges = (event) => {
-      //this.setState({ [event.target.name]: event.target.value });
-      this.setState({
-         task: event.target.value
-      })
-
+		//this.setState({ [event.target.name]: event.target.value });
+		this.setState({
+			task: event.target.value
+		});
 
 		//    this.setState({
 		//       todoList: this.state.todoList.task=event.target.value
@@ -65,20 +64,19 @@ class App extends React.Component {
 			task: ''
 		});
 
-	
-      // this.setState((st) =>({
-      //    todoList: st.todoList.concat({
-      //       task: this.state.task,
+		// this.setState((st) =>({
+		//    todoList: st.todoList.concat({
+		//       task: this.state.task,
 		// 	 	id: Date.now(),
 		// 		completed: false
-      //    }),
-      // })
-      // );
+		//    }),
+		// })
+		// );
 
-      // this.setState(st=>({
-      //    todoList:st.todoList.task=''
-      // }))
-      
+		// this.setState(st=>({
+		//    todoList:st.todoList.task=''
+		// }))
+
 		// console.log(this.state.todoList);
 	};
 
@@ -111,9 +109,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<h2>Welcome to your Todo App!</h2>
-
-				<TodoList todoData={this.state.todoList} onToggle={this.onToggle} />
+				<h2 className='app-title'>Welcome to your Todo App!</h2>
 
 				<TodoForm
 					addNewTodo={this.addNewTodo}
@@ -122,7 +118,7 @@ class App extends React.Component {
 					clearCompleted={this.clearCompleted}
 				/>
 
-            
+				<TodoList todoData={this.state.todoList} onToggle={this.onToggle} />
 			</div>
 		);
 	}

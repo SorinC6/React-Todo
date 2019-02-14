@@ -6,7 +6,7 @@ import './Todo.css';
 
 const TodoList = (props) => {
    return (
-      <div>
+      <div class='todo-list'>
          {props.todoData.map((todo) => {
             return (
                <Todo
